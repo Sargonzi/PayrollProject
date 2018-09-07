@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="idStaffDao" class="com.ictti.payroll.dao.StaffDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="idQualificationDao" class="com.ictti.payroll.dao.QualificationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="idRankDao" class="com.ictti.payroll.dao.RankDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="idDepartmentDao" class="com.ictti.payroll.dao.DepartmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- DataSource definition -->
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+	<bean id="dbConf" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg>
+			<value>database.properties</value>
+		</constructor-arg>
+	</bean>
+	<bean id="databaseConfPostProcessor"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<ref bean="dbConf" />
+		</property>
+	</bean>
+	<!-- //Transaction Manager -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- sessionFactory definition -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="mappingResources">
+			<list>
+
+				<value> com/ictti/payroll/dao/hbm/xml/Department.hbm.xml</value>
+				<value> com/ictti/payroll/dao/hbm/xml/LeaveDetail.hbm.xml</value>
+				<value> com/ictti/payroll/dao/hbm/xml/LeaveType.hbm.xml</value>
+				<value> com/ictti/payroll/dao/hbm/xml/Qualification.hbm.xml</value>
+				<value> com/ictti/payroll/dao/hbm/xml/Rank.hbm.xml</value>
+				<value> com/ictti/payroll/dao/hbm/xml/SalaryRecord.hbm.xml</value>
+				<value> com/ictti/payroll/dao/hbm/xml/Staff.hbm.xml</value>
+
+
+
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLInnoDBDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

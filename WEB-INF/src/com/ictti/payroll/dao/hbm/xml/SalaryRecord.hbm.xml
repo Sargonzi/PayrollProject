@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.ictti.payroll.business.entity">
+	<class
+		name="SalaryRecord"
+		table="salary_record"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="salary_record_id"
+		>
+			<generator class="identity"/>
+		</id>
+
+		<property
+			name="date"
+			column="date"
+			type="date"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="actualPay"
+			column="actual_pay"
+			type="java.lang.Double"
+			not-null="true"
+			length="22"
+		/>
+		<property
+			name="fullPay"
+			column="full_pay"
+			type="java.lang.Double"
+			not-null="true"
+			length="22"
+		/>
+		<property
+			name="workingDayRate"
+			column="working_day_rate"
+			type="java.lang.Double"
+			not-null="true"
+			length="22"
+		/>
+		<many-to-one
+			name="staff"
+			column="staff_id"
+			class="Staff"
+			not-null="true"
+		>
+		</many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

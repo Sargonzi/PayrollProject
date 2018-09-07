@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.ictti.payroll.business.entity">
+	<class
+		name="LeaveDetail"
+		table="leave_detail"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="leave_detail_id"
+		>
+			<generator class="identity"/>
+		</id>
+
+		<property
+			name="startDate"
+			column="start_date"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="endDate"
+			column="end_date"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="reason"
+			column="reason"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="leaveApplyDate"
+			column="leave_apply_date"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="leavedDays"
+			column="leaved_days"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="leaveStatus"
+			column="leave_status"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="leavePhoto"
+			column="leave_photo"
+			type="binary"
+			not-null="false"
+		/>
+		<many-to-one
+			name="leaveType"
+			column="leave_type_id"
+			class="LeaveType"
+			not-null="true"
+		>
+		</many-to-one>
+		<many-to-one
+			name="staff"
+			column="staff_id"
+			class="Staff"
+			not-null="true"
+		>
+		</many-to-one>
+
+
+	</class>	
+</hibernate-mapping>

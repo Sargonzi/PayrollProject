@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.ictti.payroll.business.entity">
+	<class
+		name="LeaveType"
+		table="leave_type"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="leave_type_id"
+		>
+			<generator class="identity"/>
+		</id>
+
+		<property
+			name="leaveTypeName"
+			column="leave_type_name"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="leaveRange"
+			column="leave_range"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+	
+
+		<set name="leaveDetails" inverse="true">
+			<key column="leave_type_id"/>
+			<one-to-many class="LeaveDetail"/>
+		</set>
+
+
+	</class>	
+</hibernate-mapping>

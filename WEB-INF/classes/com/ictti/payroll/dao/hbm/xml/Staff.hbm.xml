@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.ictti.payroll.business.entity">
+	<class
+		name="Staff"
+		table="staff"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="staff_id"
+		>
+			<generator class="identity"/>
+		</id>
+
+		<property
+			name="staffName"
+			column="staff_name"
+			type="string"
+			not-null="true"
+			length="30"
+		/>
+		<property
+			name="staffPhoto"
+			column="staff_photo"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="staffNrc"
+			column="staff_nrc"
+			type="string"
+			not-null="true"
+			length="30"
+		/>
+		<property
+			name="email"
+			column="email"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="password"
+			column="password"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="staffDob"
+			column="staff_dob"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="religion"
+			column="religion"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="race"
+			column="race"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="phoneNo"
+			column="phone_no"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="employmentStartDate"
+			column="employment_start_date"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="currentAddress"
+			column="current_address"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="permanentAddress"
+			column="permanent_address"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+		<property
+			name="currentRankDate"
+			column="current_rank_date"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="roleStatus"
+			column="role_status"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="staffStatus"
+			column="staff_status"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+		<many-to-one
+			name="dept"
+			column="dept_id"
+			class="Department"
+			not-null="true"
+		>
+		</many-to-one>
+		<many-to-one
+			name="rank"
+			column="rank_id"
+			class="Rank"
+			not-null="true"
+		>
+		</many-to-one>
+		<many-to-one
+			name="qualification"
+			column="qualification_id"
+			class="Qualification"
+			not-null="true"
+		>
+		</many-to-one>
+	
+
+		<set name="salaryRecords" inverse="true">
+			<key column="staff_id"/>
+			<one-to-many class="SalaryRecord"/>
+		</set>
+
+		<set name="leaveDetails" inverse="true">
+			<key column="staff_id"/>
+			<one-to-many class="LeaveDetail"/>
+		</set>
+
+
+	</class>	
+</hibernate-mapping>
