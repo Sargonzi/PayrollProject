@@ -11,14 +11,14 @@ import com.ictti.payroll.presentation.form.ManageSalaryForm;
 
 public class CalculateAllSalaryAction extends BaseAction {
 
-	private SalaryService myStaffService;
+	private SalaryService mySalaryService;
 
-	public SalaryService getMyStaffService() {
-		return myStaffService;
+	public SalaryService getMySalaryService() {
+		return mySalaryService;
 	}
 
-	public void setMyStaffService(SalaryService myStaffService) {
-		this.myStaffService = myStaffService;
+	public void setMySalaryService(SalaryService mySalaryService) {
+		this.mySalaryService = mySalaryService;
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class CalculateAllSalaryAction extends BaseAction {
 			HttpServletResponse response, ActionMapping mapping) {
 		// TODO Auto-generated method stub
 		ManageSalaryForm myForm = (ManageSalaryForm) form;
-		myStaffService.firstLoadSearch(myForm);
+		mySalaryService.firstLoadSearch(myForm);
 		return "gotoCalculateAllStaff";
 	}
 

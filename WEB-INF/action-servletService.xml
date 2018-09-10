@@ -4,11 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-	<bean id="idStaffService" class="com.ictti.payroll.business.service.SalaryService">
+	<bean id="idSalaryService" class="com.ictti.payroll.business.service.SalaryService">
 		<property name="myStaffDao" ref="idStaffDao" />
-		<property name="myRankDao" ref="idRankDao"/>
-		<property name="myQualificationDao" ref="idQualificationDao"/>
-		<property name="myDepartmentDao" ref="idDepartmentDao"/>
+	
 	</bean>
 	
+	<bean id="idStaffService" class="com.ictti.payroll.business.service.StaffService">
+		<property name="myStaffDao" ref="idStaffDao" />
+	
+	</bean>
 </beans>

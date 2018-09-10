@@ -7,14 +7,21 @@
 
 	<bean name="/salaryManagePathFirst"
 		class="com.ictti.payroll.presentation.action.CalculateAllSalaryAction">
+		<property name="mySalaryService" ref="idSalaryService" />
+	</bean>
+
+	<bean name="/personalDetail"
+		class="com.ictti.payroll.presentation.action.DetailStaffAction">
+		<property name="mySalaryService" ref="idSalaryService" />
+	</bean>
+
+	<bean name="/staffManagePathFirst" class="com.ictti.payroll.presentation.action.AllStaffAction">
 		<property name="myStaffService" ref="idStaffService" />
 	</bean>
 	
-	<bean name="/personalDetail"
-		class="com.ictti.payroll.presentation.action.DetailStaffAction">
-		<property name="mySalaryService" ref="idStaffService" />
+	<bean name="/deleteStaff" class="com.ictti.payroll.presentation.action.AllStaffAction">
+		<property name="myStaffService" ref="idStaffService" />
 	</bean>
-
 
 
 </beans>

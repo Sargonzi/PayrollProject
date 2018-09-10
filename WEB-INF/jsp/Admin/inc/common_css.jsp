@@ -8,8 +8,7 @@
 <link rel="stylesheet" type="text/css"
 	href="css/Admin/bootstrap.min.css">
 <!-- Google Icons CSS -->
-<link rel="stylesheet" type="text/css"
-	href="css/Admin/google-icons.css">
+<link rel="stylesheet" type="text/css" href="css/Admin/google-icons.css">
 <link rel="stylesheet" type="text/css"
 	href="css/Admin/material-icons.css">
 
@@ -25,6 +24,13 @@
 <link rel="stylesheet" type="text/css"
 	href="css/Admin/propeller-admin.css">
 
-<!-- Propeller dataTables css-->
-<!-- <link rel="stylesheet" type="text/css" -->
-<!-- 	href="css/Admin/pmd-datatable.css"> -->
+<!-- Propeller dataTables css -->
+<link rel="stylesheet" type="text/css"
+	href="css/Admin/Data Table/pmd-datatable.css">
+
+<link rel="stylesheet" type="text/css"
+	href="css/Admin/Data Table/dataTables.bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css"
+	href="css/Admin/Data Table/select.dataTables.min.css">
+

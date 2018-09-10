@@ -12,33 +12,6 @@ import com.ictti.payroll.presentation.form.ManageSalaryForm;
 public class SalaryService {
 
 	private StaffDao myStaffDao;
-	private RankDao myRankDao;
-	private QualificationDao myQualificationDao;
-	private DepartmentDao myDepartmentDao;
-
-	public RankDao getMyRankDao() {
-		return myRankDao;
-	}
-
-	public void setMyRankDao(RankDao myRankDao) {
-		this.myRankDao = myRankDao;
-	}
-
-	public QualificationDao getMyQualificationDao() {
-		return myQualificationDao;
-	}
-
-	public void setMyQualificationDao(QualificationDao myQualificationDao) {
-		this.myQualificationDao = myQualificationDao;
-	}
-
-	public DepartmentDao getMyDepartmentDao() {
-		return myDepartmentDao;
-	}
-
-	public void setMyDepartmentDao(DepartmentDao myDepartmentDao) {
-		this.myDepartmentDao = myDepartmentDao;
-	}
 
 	public StaffDao getMyStaffDao() {
 		return myStaffDao;

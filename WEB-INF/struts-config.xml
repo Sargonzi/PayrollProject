@@ -61,7 +61,7 @@
 	<action-mappings>
 		<!-- Default "Welcome" action -->
 		<!-- Forwards to Welcome.jsp -->
-		<action path="/Welcome" forward="/WEB-INF/jsp/Admin/salaryManage.jsp" />
+		<action path="/Welcome" forward="/WEB-INF/jsp/Admin/staffManage.jsp" />
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 

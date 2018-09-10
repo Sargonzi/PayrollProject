@@ -1,3 +1,4 @@
+<%@ include file="inc/common.jsp"%>
 <!doctype html>
 <html lang="">
 <head>
@@ -39,13 +40,16 @@
 			</ol>
 			<!--breadcrum end-->
 
+			<!--Filte Area  -->
+			<!--End  -->
+
 			<section class="row component-section">
 				<div class="col-md-12">
 					<div class="component-box">
 						<!-- table card example -->
 						<div class="pmd-card pmd-z-depth pmd-card-custom-view">
 							<div class="table-responsive">
-								<table id="example"
+								<table
 									class="table pmd-table table-hover table-striped display responsive nowrap"
 									cellspacing="0" width="100%">
 									<thead>
@@ -58,183 +62,23 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td class="center">1</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">2</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">3</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">4</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">5</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">6</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">7</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge">Disable</span></td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">8</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">9</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge">Disable</span></td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">10</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">11</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge badge-success">Active</span>
-											</td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
-										<tr>
-											<td class="center">12</td>
-											<td>Matthew</td>
-											<td>example@gmail.com</td>
-											<td class="center"><span class="badge">Disable</span></td>
-											<td><a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-												href="staffEdit.html"> Edit </a> <a
-												class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-												href="staffDetail.html"> Detail </a>
-												<button data-target="#alert-dialog" data-toggle="modal"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger"
-													type="button">Delete</button></td>
-										</tr>
+										<c:forEach var="i" begin="${StaffFormBean.begin}"
+											end="${StaffFormBean.end}" step="1">
+											<tr>
+												<td class="center">${i}</td>
+												<td>${StaffFormBean.staffList[i-1].staffName}</td>
+												<td>${StaffFormBean.staffList[i-1].email}</td>
+												<td>${(StaffFormBean.staffList[i-1].staffStatus) == 1 ? '<span class="badge badge-success">Active</span>' : '<span class="badge">Disable</span>'}</td>
+												<td><a
+													class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
+													href="staffEdit.html"> Edit </a> <a
+													class="btn pmd-btn-raised pmd-ripple-effect btn-info"
+													href="personalDetail.do?staffDetailId=${StaffFormBean.staffList[i-1].id }">
+														Detail </a> <a
+													href="deleteStaff.do?staffDeleteId=${StaffFormBean.staffList[i-1].id }&formControl=1"
+													class="btn pmd-btn-raised pmd-ripple-effect btn-danger" type="button">Delete</a></td>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
@@ -272,12 +116,13 @@
 
 	<!-- Scripts Starts -->
 	<%@ include file="inc/common_js.jsp"%>
+
 	<!-- Custom Data Table -->
 	<script type="text/javascript">
 		$(document)
 				.ready(
 						function() {
-							var exampleDatatable = $('#example')
+							var exampleDatatable = $('#tableStaff')
 									.DataTable(
 											{
 												responsive : {

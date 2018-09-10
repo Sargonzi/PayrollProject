@@ -4,9 +4,6 @@
           "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-
-
-
 	<!-- Form Bean Definitions -->
 	<form-beans>
 		<form-bean name="SalaryFormBean"
@@ -15,7 +12,8 @@
 			type="com.ictti.payroll.presentation.form.ManageSalaryForm"></form-bean>
 		<form-bean name="PersonalDetailFormBean"
 			type="com.ictti.payroll.presentation.form.ManageSalaryForm"></form-bean>
-
+		<form-bean name="StaffFormBean"
+			type="com.ictti.payroll.presentation.form.ManageStaffForm"></form-bean>
 	</form-beans>
 	<!-- Action Mapping Definitions -->
 
@@ -32,11 +30,20 @@
 			scope="session">
 			<forward name="gotoPersonalDetail" path="/WEB-INF/jsp/Admin/staffDetail.jsp" />
 		</action>
+		
+		<action path="/staffManagePathFirst" name="StaffFormBean"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
+			scope="session">
+			<forward name="gotoAllStaff" path="/WEB-INF/jsp/Admin/staffManage.jsp" />
+		</action>
+			
+		<action path="/deleteStaff" name="StaffFormBean"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
+			scope="session">
+			<forward name="gotoAllStaff" path="/WEB-INF/jsp/Admin/staffManage.jsp" />
+		</action>
 
 	</action-mappings>
-
-
-
 
 </struts-config>
 

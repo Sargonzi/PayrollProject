@@ -44,7 +44,7 @@
                 <div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="staff.html">All Staff</a></li>
+                <li><a href="staffManagePathFirst.do?formControl=2">All Staff</a></li>
                 <li><a href="staffNew.html">Add New</a></li>
             </ul>
         </li>

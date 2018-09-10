@@ -20,4 +20,15 @@ public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao {
 		List<Staff> l = getHibernateTemplate().find(hql, id);
 		return l.isEmpty() || l == null ? null : (Staff) l.get(0);
 	}
+
+	public void saveOrUpdateStaff(Staff staff) {
+		getHibernateTemplate().saveOrUpdate(staff);
+		
+	}
+
+	public List<Staff> getAllActiveStaffList() {
+		String hql = "from Staff where staffStatus = 1";
+		List<Staff> l = getHibernateTemplate().find(hql);
+		return l.isEmpty() || l == null ? null : l;
+	}
 }

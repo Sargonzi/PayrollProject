@@ -8,6 +8,10 @@ public interface StaffDao {
 
 	List<Staff> getAllStaffList();
 	
+	List<Staff> getAllActiveStaffList();
+	
 	Staff getStaffById(int id);
+	
+	void saveOrUpdateStaff(Staff staff);
 	
 }

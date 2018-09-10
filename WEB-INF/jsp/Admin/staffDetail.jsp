@@ -87,6 +87,7 @@
                                                     <div class="col-lg-8">
                                                         <input type="text" id="staffName" class="form-control"
                                                                value="${PersonalDetailFormBean.detailStaff.staffName }" disabled>
+                                                               
                                                     </div>
                                                 </div>
                                                 <div class="form-group pmd-textfield">
@@ -187,7 +188,7 @@
                                                         Status</label>
                                                     <div class="col-lg-8">
                                                         <input type="text" id="staffStatus" class="form-control"
-                                                               value="${(PersonalDetailFormBean.detailStaff.staffStatus) == 1? 'Active' : 'Disabled' }"  disabled>
+                                                               value="${(PersonalDetailFormBean.detailStaff.staffStatus) == 1? 'Active' : 'Disable' }"  disabled>
                                                     </div>
                                                 </div>
                                                 <div class="form-group pmd-textfield">
