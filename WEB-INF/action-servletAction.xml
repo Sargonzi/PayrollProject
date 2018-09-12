@@ -22,6 +22,10 @@
 	<bean name="/deleteStaff" class="com.ictti.payroll.presentation.action.AllStaffAction">
 		<property name="myStaffService" ref="idStaffService" />
 	</bean>
+	
+	<bean name="/staffPending" class="com.ictti.payroll.presentation.action.AllStaffAction">
+		<property name="myStaffService" ref="idStaffService" />
+	</bean>
 
 
 </beans>

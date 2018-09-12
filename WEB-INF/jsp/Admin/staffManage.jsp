@@ -9,7 +9,34 @@
 <meta content="width=device-width, initial-scale=1, user-scalable=no"
 	name="viewport">
 <title>Manage Staff | Payroll</title>
+<%@ include file="inc/datatable_css.jsp"%>
 <%@ include file="inc/common_css.jsp"%>
+<style>
+.dataTables_wrapper .dt-buttons .btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.1;
+	color: #2196f3;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: inherit;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid #cecece;
+	border-radius: 4px;
+}
+</style>
 </head>
 
 <body>
@@ -46,67 +73,48 @@
 			<section class="row component-section">
 				<div class="col-md-12">
 					<div class="component-box">
-						<!-- table card example -->
-						<div class="pmd-card pmd-z-depth pmd-card-custom-view">
-							<div class="table-responsive">
-								<table
-									class="table pmd-table table-hover table-striped display responsive nowrap"
-									cellspacing="0" width="100%">
-									<thead>
+						<div class="table-responsive">
+							<table id="example" class="table table-bordered"
+								style="width: 100%">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="i" begin="${StaffFormBean.begin}"
+										end="${StaffFormBean.end}" step="1">
 										<tr>
-											<th>No</th>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Status</th>
-											<th>Action</th>
+											<td class="center">${i}</td>
+											<td>${StaffFormBean.staffList[i-1].staffName}</td>
+											<td>${StaffFormBean.staffList[i-1].email}</td>
+											<td>${(StaffFormBean.staffList[i-1].staffStatus) == 1 ? '<span class="badge badge-success">Active</span>' : '<span class="badge">Disable</span>'}</td>
+											<td><a
+												class="btn btn-sm pmd-btn-raised pmd-ripple-effect btn-primary"
+												href="staffEdit.html"> Edit </a> <a
+												class="btn btn-sm pmd-btn-raised pmd-ripple-effect btn-info"
+												href="personalDetail.do?staffDetailId=${StaffFormBean.staffList[i-1].id }">
+													Detail </a> <a
+												href="deleteStaff.do?staffDeleteId=${StaffFormBean.staffList[i-1].id }&formControl=1"
+												class="btn btn-sm pmd-btn-raised pmd-ripple-effect btn-danger"
+												type="button">Delete</a></td>
 										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="i" begin="${StaffFormBean.begin}"
-											end="${StaffFormBean.end}" step="1">
-											<tr>
-												<td class="center">${i}</td>
-												<td>${StaffFormBean.staffList[i-1].staffName}</td>
-												<td>${StaffFormBean.staffList[i-1].email}</td>
-												<td>${(StaffFormBean.staffList[i-1].staffStatus) == 1 ? '<span class="badge badge-success">Active</span>' : '<span class="badge">Disable</span>'}</td>
-												<td><a
-													class="btn pmd-btn-raised pmd-ripple-effect btn-primary"
-													href="staffEdit.html"> Edit </a> <a
-													class="btn pmd-btn-raised pmd-ripple-effect btn-info"
-													href="personalDetail.do?staffDetailId=${StaffFormBean.staffList[i-1].id }">
-														Detail </a> <a
-													href="deleteStaff.do?staffDeleteId=${StaffFormBean.staffList[i-1].id }&formControl=1"
-													class="btn pmd-btn-raised pmd-ripple-effect btn-danger" type="button">Delete</a></td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
+									</c:forEach>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<!--Alert Delete-->
-			<div tabindex="-1" class="modal fade" id="alert-dialog"
-				style="display: none;" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-body">Would you like to delete?</div>
-						<div class="pmd-modal-action text-right">
-							<button data-dismiss="modal"
-								class="btn pmd-ripple-effect btn-primary pmd-btn-flat"
-								type="button">Cancel</button>
-							<button data-dismiss="modal"
-								class="btn pmd-ripple-effect btn-default pmd-btn-flat"
-								type="button">Ok</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- tab end -->
 
+			<!-- tab end -->
+
+		</div>
 	</div>
 	<!-- content area end -->
 
@@ -118,53 +126,16 @@
 	<%@ include file="inc/common_js.jsp"%>
 
 	<!-- Custom Data Table -->
-	<script type="text/javascript">
-		$(document)
-				.ready(
-						function() {
-							var exampleDatatable = $('#tableStaff')
-									.DataTable(
-											{
-												responsive : {
-													details : {
-														type : 'column',
-														target : 'tr'
-													}
-												},
-												order : [ 1, 'asc' ],
-												bFilter : true,
-												bLengthChange : true,
-												pagingType : "simple",
-												"paging" : true,
-												"searching" : true,
-												"language" : {
-													"info" : " _START_ - _END_ of _TOTAL_ ",
-													"sLengthMenu" : "<span class='custom-select-title'>Rows per page:</span> <span class='custom-select'> _MENU_ </span>",
-													"sSearch" : "",
-													"sSearchPlaceholder" : "Search",
-													"paginate" : {
-														"sNext" : " ",
-														"sPrevious" : " "
-													},
-												},
-												dom : "<'pmd-card-title'<'data-table-responsive pull-left'><'search-paper pmd-textfield'f>>"
-														+ "<'row'<'col-sm-12'tr>>"
-														+ "<'pmd-card-footer' <'pmd-datatable-pagination' l i p>>",
-											});
+	<%@ include file="inc/datatable_js.jsp"%>
 
-							/// Select value
-							$('.custom-select-info').hide();
+	<script>
+		$(document).ready(function() {
+			var table = $('#example').DataTable({
+				lengthChange : true,
+			});
 
-							$(".data-table-responsive")
-									.html(
-											'<h2 class="pmd-card-title-text">Manage All Staff</h2>');
-							$(".custom-select-action")
-									.html(
-											'<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">more_vert</i></button>');
-
-						});
+		});
 	</script>
 	<!-- Scripts Ends -->
-
 </body>
 </html>

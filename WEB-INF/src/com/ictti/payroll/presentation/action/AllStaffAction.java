@@ -40,6 +40,8 @@ public class AllStaffAction extends BaseAction {
 		}else if(myForm.getFormControl() == 2){
 		myStaffService.loadAllStaff(myForm);
 		return "gotoAllStaff";
+		} else if(myForm.getFormControl() == 3){
+			return "gotoStaffPending";
 		}
 		return "gotoAllStaff";
 	}

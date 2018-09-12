@@ -14,6 +14,8 @@
 			type="com.ictti.payroll.presentation.form.ManageSalaryForm"></form-bean>
 		<form-bean name="StaffFormBean"
 			type="com.ictti.payroll.presentation.form.ManageStaffForm"></form-bean>
+		<form-bean name="StaffPendingFormBean"
+			type="com.ictti.payroll.presentation.form.ManageStaffForm"></form-bean>
 	</form-beans>
 	<!-- Action Mapping Definitions -->
 
@@ -22,7 +24,7 @@
 		<action path="/salaryManagePathFirst" name="SalaryFormBean"
 			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
 			scope="session">
-			<forward name="gotoCalculateAllStaff" path="/WEB-INF/jsp/Admin/salaryManage.jsp" />
+			<forward name="gotoCalculateAllStaff" path="/WEB-INF/jsp/Admin/salary_manage.jsp" />
 		</action>
 
 		<action path="/personalDetail" name="PersonalDetailFormBean"
@@ -30,17 +32,23 @@
 			scope="session">
 			<forward name="gotoPersonalDetail" path="/WEB-INF/jsp/Admin/staffDetail.jsp" />
 		</action>
-		
+
 		<action path="/staffManagePathFirst" name="StaffFormBean"
 			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
 			scope="session">
 			<forward name="gotoAllStaff" path="/WEB-INF/jsp/Admin/staffManage.jsp" />
 		</action>
-			
+
 		<action path="/deleteStaff" name="StaffFormBean"
 			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
 			scope="session">
 			<forward name="gotoAllStaff" path="/WEB-INF/jsp/Admin/staffManage.jsp" />
+		</action>
+
+		<action path="/staffPending" name="StaffPendingFormBean"
+			type="org.springframework.web.struts.DelegatingActionProxy" validate="false"
+			scope="session">
+			<forward name="gotoStaffPending" path="/WEB-INF/jsp/Admin/staffRequest.jsp" />
 		</action>
 
 	</action-mappings>
